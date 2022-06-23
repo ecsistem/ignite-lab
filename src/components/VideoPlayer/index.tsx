@@ -6,6 +6,7 @@ import {
   Image,
   Lightning,
 } from "phosphor-react";
+import '@vime/core/themes/default.css';
 
 export function VideoPlayer() {
   return (
