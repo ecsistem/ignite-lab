@@ -1,10 +1,22 @@
-import { DiscordLogo, Lightning } from "phosphor-react";
+import { Player, DefaultUi, Youtube } from "@vime/react";
+import {
+  CaretRight,
+  DiscordLogo,
+  FileArrowDown,
+  Image,
+  Lightning,
+} from "phosphor-react";
 
 export function VideoPlayer() {
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video"/>
+        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
+          <Player>
+            <Youtube videoId="KJj70dBgRPo" />
+            <DefaultUi />
+          </Player>
+        </div>
       </div>
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex items-start gap-16">
@@ -20,10 +32,18 @@ export function VideoPlayer() {
               nosso front-end utilizando Apollo Client.
             </p>
             <div className="flex items-center gap-4 mt-6">
-              <img className="rounded-full h-16 w-16 border-2 border-blue-500" src="http://github.com/ecsistem.png" alt="" />
+              <img
+                className="rounded-full h-16 w-16 border-2 border-blue-500"
+                src="http://github.com/ecsistem.png"
+                alt=""
+              />
               <div className="leading-relaxed">
-                <strong className="font-bold text-2xl block">Edson Costa</strong>
-                <span className="text-gray-200 text-sm block">Desenvolvedor Front-End</span>
+                <strong className="font-bold text-2xl block">
+                  Edson Costa
+                </strong>
+                <span className="text-gray-200 text-sm block">
+                  Desenvolvedor Front-End
+                </span>
               </div>
             </div>
           </div>
@@ -43,6 +63,44 @@ export function VideoPlayer() {
               Acesse o Desafio
             </a>
           </div>
+        </div>
+        <div className="gap-8 mt-20 grid grid-cols-2">
+          <a
+            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            href=""
+          >
+            <div className="bg-green-700 h-full p-6 flex items-center">
+              <FileArrowDown size={40} />
+            </div>
+            <div className="py-6 leading-relaxed">
+              <strong className="text-2xl">Material Complementar</strong>
+              <p className="text-sm text-gray-200 mt-2">
+                Acesse o material complementar para acelerar o seu
+                desenvolvimento
+              </p>
+            </div>
+            <div className="h-full p-6 flex items-center">
+              <CaretRight size={24} />
+            </div>
+          </a>
+          <a
+            className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            href=""
+          >
+            <div className="bg-green-700 h-full p-6 flex items-center">
+              <Image size={40} />
+            </div>
+            <div className="py-6 leading-relaxed">
+              <strong className="text-2xl">Wallpapers Eclusivos</strong>
+              <p className="text-sm text-gray-200 mt-2">
+                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
+                máquina
+              </p>
+            </div>
+            <div className="h-full p-6 flex items-center">
+              <CaretRight size={24} />
+            </div>
+          </a>
         </div>
       </div>
     </div>
