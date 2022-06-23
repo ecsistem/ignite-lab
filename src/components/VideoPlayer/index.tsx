@@ -42,15 +42,14 @@ interface GetLessonBySlugResponse {
 } 
 
 export function VideoPlayer(props: VideoProps): JSX.Element {
-  const { loading, error, data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG, {
+  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG, {
     variables: {
       slug: props.lessonSlug,
     }
   })
-  if (loading) return (
+  if (!data) return (
     <FadingBalls width="24px" height="24px" duration="4s" />
   )
-  if (error) return <p>Error :(</p>;
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
