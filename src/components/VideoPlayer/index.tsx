@@ -64,10 +64,10 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
-              {data?.lesson.title}
+              {data.lesson.title}
             </h1>
             <p className="mt-4 text-gray-200 leading-relaxed">
-              {data?.lesson.description}
+              {data.lesson.description}
             </p>
             <div className="flex items-center gap-4 mt-6">
               <img
