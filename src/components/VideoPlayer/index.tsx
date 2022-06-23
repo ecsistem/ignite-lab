@@ -8,7 +8,6 @@ import {
 } from "phosphor-react";
 import { gql, useQuery } from "@apollo/client";
 import '@vime/core/themes/default.css';
-import { FadingBalls } from "react-cssfx-loading/lib";
 
 const GET_LESSON_BY_SLUG = gql `
   query GetLessonBySlug($slug: String) {
@@ -48,7 +47,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
     }
   })
   if (!data) return (
-    <FadingBalls width="24px" height="24px" duration="4s" />
+    <h1>carregando...</h1>
   )
   return (
     <div className="flex-1">
