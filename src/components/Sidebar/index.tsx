@@ -20,7 +20,7 @@ const GET_LESSONS_QUERY = gql`
 export function Sidebar() {
   const { loading, error, data } = useQuery<{ lessons: LessonProps[] }>(GET_LESSONS_QUERY);
   if (loading) return (
-    <FadingBalls className="items-center text-blue-500" width="50px" height="50px" duration="4s" />
+    <FadingBalls width="50px" height="50px" duration="4s" />
   )
   if (error) return <p>Error :(</p>;
   return (
