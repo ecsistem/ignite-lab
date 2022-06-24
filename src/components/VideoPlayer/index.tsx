@@ -60,7 +60,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
         </div>
       </div>
       <div className="p-8 max-w-[1100px] mx-auto">
-        <div className="flex flex-col items-start gap-16 lg:flex-row">
+        <div className="flex flex-col md:items-start gap-16 lg:flex-row">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
               {data.lesson.title}
