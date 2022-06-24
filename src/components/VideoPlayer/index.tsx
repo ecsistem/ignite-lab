@@ -60,7 +60,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
         </div>
       </div>
       <div className="p-8 max-w-[1100px] mx-auto">
-        <div className="flex items-start gap-16">
+        <div className="flex flex-col items-start gap-16 lg:flex-row">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
               {data.lesson.title}
@@ -101,7 +101,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
             </a>
           </div>
         </div>
-        <div className="gap-8 mt-20 grid grid-cols-2">
+        <div className="gap-8 mt-20 grid grid-cols-1 md:grid-cols-2">
           <a
             className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
             href=""
