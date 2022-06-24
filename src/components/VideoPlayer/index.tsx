@@ -7,20 +7,18 @@ import {
   Lightning,
 } from "phosphor-react";
 import { gql, useQuery } from "@apollo/client";
-import '@vime/core/themes/default.css';
-import { VideoProps, GetLessonBySlugResponse} from "../../interface/video";
-import { GET_LESSON_BY_SLUG } from "./../../constants/gql"
+import "@vime/core/themes/default.css";
+import { VideoProps, GetLessonBySlugResponse } from "../../interface/video";
+import { GET_LESSON_BY_SLUG } from "./../../constants/gql";
 import { Footer } from "../Footer";
 
 export function VideoPlayer(props: VideoProps): JSX.Element {
   const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG, {
     variables: {
       slug: props.lessonSlug,
-    }
-  })
-  if (!data) return (
-    <h1>carregando...</h1>
-  )
+    },
+  });
+  if (!data) return <h1>carregando...</h1>;
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
@@ -34,9 +32,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex flex-col md:items-start gap-16 lg:flex-row">
           <div className="flex-1">
-            <h1 className="text-2xl font-bold">
-              {data.lesson.title}
-            </h1>
+            <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
             <p className="mt-4 text-gray-200 leading-relaxed">
               {data.lesson.description}
             </p>
@@ -112,7 +108,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
           </a>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
