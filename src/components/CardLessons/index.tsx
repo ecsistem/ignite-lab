@@ -16,10 +16,10 @@ export function CardLessons(props: LessonProps) {
   return (
     <Link className="group" to={`/event/lesson/${props.slug}`}>
       <span className="text-gray-300">{AvaibleDateFormatted}</span>
-      <div className="rounded border border-gray-500 p-4 group-hover:border-green-500">
+      <div className="rounded border border-gray-500 p-4 group-hover:border-green-500 group-active:bg-green-500">
         <header className="flex items-center justify-between">
           {isLessonAvaible ? (
-            <span className="text-sm text-blue-500 font-medium flex items-center gap-2">
+            <span className="text-sm text-blue-500 font-medium flex items-center gap-2 group-active:text-white">
               <CheckCircle size={20} />
               Conteudo Liberado
             </span>

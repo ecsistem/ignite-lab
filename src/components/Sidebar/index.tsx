@@ -2,20 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { CardLessons } from "../CardLessons";
 import { LessonProps } from "../../interface/lesson";
 import { FadingBalls } from "react-cssfx-loading";
-
-const GET_LESSONS_QUERY = gql`
-  query MyQuery {
-    lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
-      id
-      slug
-      stage
-      title
-      lessonType
-      availableAt
-    }
-  }
-
-`;
+import { GET_LESSONS_QUERY } from "./../../constants/gql";
 
 export function Sidebar() {
   const { loading, error, data } = useQuery<{ lessons: LessonProps[] }>(GET_LESSONS_QUERY);

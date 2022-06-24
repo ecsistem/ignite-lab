@@ -8,37 +8,9 @@ import {
 } from "phosphor-react";
 import { gql, useQuery } from "@apollo/client";
 import '@vime/core/themes/default.css';
-
-const GET_LESSON_BY_SLUG = gql `
-  query GetLessonBySlug($slug: String) {
-    lesson(where: {slug: $slug}) {
-      title
-      videoId
-      description
-      teacher {
-        avatarURL
-        bio
-        name
-     }
-    }
-  }`
-
-interface VideoProps {
-  lessonSlug: string,
-}
-
-interface GetLessonBySlugResponse {
-    lesson:{
-        title: string;
-        videoId: string;
-        description: string;
-        teacher: {
-            avatarURL: string;
-            bio: string;
-            name: string;
-        }
-    } 
-} 
+import { VideoProps, GetLessonBySlugResponse} from "../../interface/video";
+import { GET_LESSON_BY_SLUG } from "./../../constants/gql"
+import { Footer } from "../Footer";
 
 export function VideoPlayer(props: VideoProps): JSX.Element {
   const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG, {
@@ -140,6 +112,7 @@ export function VideoPlayer(props: VideoProps): JSX.Element {
           </a>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
